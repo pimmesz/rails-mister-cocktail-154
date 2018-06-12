@@ -1,2 +1,9 @@
 <h1>Cocktails#index</h1>
 <p>Find me in app/views/cocktails/index.html.erb</p>
+
+<% @cocktails.each do |cocktail| %>
+<p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+<p><%= link_to "Destroy restaurant", cocktail_path(cocktail), method: :delete %></p>
+<% end %>
+
+<%= link_to "New cocktail", new_cocktail_path %>
