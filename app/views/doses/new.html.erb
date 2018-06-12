@@ -1,2 +1,11 @@
-<h1>Doses#new</h1>
+<h1>doses#new</h1>
 <p>Find me in app/views/doses/new.html.erb</p>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.label :description, "Enter a description" %>
+  <%= f.text_field :description %>
+  <%= f.association :ingredient, as: :select %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Home", cocktails_path %>
