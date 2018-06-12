@@ -1,0 +1,9 @@
+<h1>Ingredients#index</h1>
+<p>Find me in app/views/ingredients/index.html.erb</p>
+
+<% @ingredients.each do |ingredient| %>
+<p><%= link_to ingredient.name, ingredient_path(ingredient) %></p>
+<p><%= link_to "Destroy ingredient", ingredient_path(ingredient), method: :delete %></p>
+<% end %>
+
+<%= link_to "New ingredient", new_ingredient_path %>
